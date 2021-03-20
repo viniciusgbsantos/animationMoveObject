@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animação</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css">
+</head>
+<body>
+    
+<section>
+<img src="img/1.png" data-speed="4"  class="layer">
+<img src="img/2.png" data-speed="5"  class="layer">
+<img src="img/3.png" data-speed="6"  class="layer">
+<img src="img/4.png" data-speed="-5"  class="layer">
+<img src="img/5.png" data-speed="3"  class="layer">
+<img src="img/6.png" data-speed="2"  class="layer">
+<img src="img/7.png" data-speed="1"  class="layer">
+<img src="img/8.png" data-speed="-1"  class="layer">
+<img src="img/9.png" data-speed="-2"  class="layer">
+<img src="img/10.png" data-speed="-3"  class="layer">
+<img src="img/11.png" data-speed="-6"  class="layer">
+<img src="img/12.png" data-speed="-4"  class="layer">
+
+
+
+
+
+<h2>SHARK</h2>
+</section>
+
+<script type="text/javascript">
+  const speeds = [];
+
+  function rand(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  function moveObjects(e) {
+    this.querySelectorAll('.layer').forEach((layer, index) => {
+      speeds[index] = speeds[index] || rand(-6, 6) || layer.dataset.speed;
+      const x = (window.innerWidth - e.pageX * speeds[index]) / 100;
+      const y = (window.innerHeight - e.pageY * speeds[index]) / 100;
+      layer.style.transform = `translateX(${x}px) translateY(${y}px)`;
+    });
+  }
+
+  document.addEventListener('mousemove', moveObjects);
+</script>
+</body>
+</html>

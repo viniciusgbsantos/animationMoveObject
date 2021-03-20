@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:  Helvetica, Arial, sans-serif;
+}
+
+body{
+    background-color: #111;
+
+}
+
+section{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section h2{
+    position: relative;
+    font-size: 12rem;
+    background: linear-gradient(90deg, rgb(114, 18, 159), rgb(115, 243, 224) );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color:transparent;
+    -webkit-box-decoration-break: clone;
+    text-shadow: none;
+
+}
+section h2:hover{
+
+    background: linear-gradient(120deg, rgb(115, 243, 224),  rgb(114, 18, 159) );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color:transparent;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    text-shadow: none;
+}
+
+section img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
